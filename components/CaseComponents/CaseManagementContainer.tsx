@@ -38,6 +38,8 @@ const CaseManagementContainer: React.FC = (props) => {
     React.useState<boolean>(false);
   const [addCategoryModalOpen, setAddCategoryModalOpen] =
     React.useState<boolean>(false);
+  const [deleteCategoryModalOpen, setDeleteCategoryModalOpen] =
+    React.useState<boolean>(false);
 
   /* NOTE: This uses */
   const [{ data, fetching, error }, executeQuery] = useQuery({
@@ -101,7 +103,7 @@ const CaseManagementContainer: React.FC = (props) => {
         <Button variant="dark" onClick={() => setAddCategoryModalOpen(true)}>
           Add Category
         </Button>
-        <Button variant="dark" onClick={() => "redirect"}>
+        <Button variant="dark" onClick={() => setDeleteCategoryModalOpen(true)}>
           Delete Category
         </Button>
         <Button variant="dark" onClick={() => setAddCaseModalOpen(true)}>
