@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-type AddCaseModalProps = {
+type DeleteCaseModalProps = {
   open: boolean;
   onClose: () => void;
 };
@@ -44,7 +44,7 @@ mutation RemoveCategoryMutation($id: bigint!) {
 }
 `;
 
-const DeleteCategoryModal: React.FC<AddCaseModalProps> = (props) => {
+const DeleteCategoryModal: React.FC<DeleteCaseModalProps> = (props) => {
   const classes = useStyles();
   const [id, setId] = useState<number>(-1);
   const [result, executeMutation] = useMutation(RemoveCategoryMutation);
@@ -67,7 +67,7 @@ const DeleteCategoryModal: React.FC<AddCaseModalProps> = (props) => {
               fullWidth
               value={category}
               onChange={(event: React.ChangeEvent<{ value: unknown }>) => {
-                setCategory(event.target.value as number);
+                setId(event.target.value as number);
               }}
             >
               <MenuItem value={data.id}>{data.name}</MenuItem> 
