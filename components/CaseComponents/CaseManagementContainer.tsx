@@ -59,12 +59,21 @@ const CaseManagementContainer: React.FC = (props) => {
           - need to give password/"id" to casecategories -> render cases
         */}
 
-            {data
+            {/*{data
             ? data.map((id: number, name: string) => {
                 return <CaseCategory key={name} category_id={id} />;
               })
 
-            : "Something went wrong -- cat creation"}
+            : "Something went wrong -- cat creation"}*/}
+
+            {data ? (
+            data.category.map((category: any) => {
+              return <Grid item xs={4} key={category.id}>
+                <CaseCategory category_id={category.id}></CaseCategory>
+              </Grid>
+            })
+            )
+            : "Something went wrong!"}
           
 
         {/* END TODO */}
