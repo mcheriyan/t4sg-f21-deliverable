@@ -48,11 +48,11 @@ const CaseCategory = (props: CaseCategoryProps) => {
     <Container
       style={{ width: "100%", borderStyle: "solid", padding: "0.75rem" }}
     >
+      <Button variant="dark" onClick={() => setDeleteCategoryModalOpen(true)}>
+          X
+      </Button>
       <Row>
         <Col>
-        <Button variant="dark" onClick={() => setDeleteCategoryModalOpen(true)}>
-          X
-        </Button>
           {category ? (
             <h3 className="font-weight-normal t4sg-color text-center">
               {category.name}
