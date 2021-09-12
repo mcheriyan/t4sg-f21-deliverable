@@ -45,8 +45,8 @@ const CaseCategory = (props: CaseCategoryProps) => {
             <h3 className="font-weight-normal t4sg-color text-center">
               {category.name}
             </h3>
-          ) 
-          fetching ? : (
+          ) :
+          fetching ? (
             <h3 className="font-weight-normal t4sg-color text-center">
               Loading data...
             </h3>
