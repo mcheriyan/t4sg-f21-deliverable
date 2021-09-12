@@ -19,14 +19,12 @@ import AddCategoryModal from "./Modals/AddCategoryModal";
   in this variable 
 */
 export const ManagementContainerQuery = `
-query querIdentify {
-  query querIdentify {
-    cases {
+  query catIdentify {
+    category {
       name
       id
     }
   }
-}
 `;
 // END TODO
 
