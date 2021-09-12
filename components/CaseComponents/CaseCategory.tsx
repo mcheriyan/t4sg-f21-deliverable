@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { useQuery } from "urql";
 import CaseCard, { CaseData } from "./CaseCard";
+import Button from "react-bootstrap/Button";
 
 type CaseCategoryProps = {
   category_id: number;
@@ -32,6 +33,8 @@ const CaseCategory = (props: CaseCategoryProps) => {
     query: CategoryQuery,
     variables: { category_id },
   });
+  const [deleteCategoryModalOpen, setDeleteCategoryModalOpen] =
+    React.useState<boolean>(false);
 
   const category: CaseCategoryData | null = data ? data?.category[0] : null;
 
@@ -41,6 +44,9 @@ const CaseCategory = (props: CaseCategoryProps) => {
     >
       <Row>
         <Col>
+        <Button variant="dark" onClick={() => setDeleteCategoryModalOpen(true)}>
+          X
+        </Button>
           {category ? (
             <h3 className="font-weight-normal t4sg-color text-center">
               {category.name}
