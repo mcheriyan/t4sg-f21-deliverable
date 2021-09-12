@@ -101,13 +101,13 @@ const CaseManagementContainer: React.FC = (props) => {
         <Button variant="dark" onClick={() => setAddCategoryModalOpen(true)}>
           Add Category
         </Button>
-        <Button variant="dark" onClick={() => setAddCategoryModalOpen(false)}>
+        <Button variant="dark" onClick={() => "redirect"}>
           Delete Category
         </Button>
         <Button variant="dark" onClick={() => setAddCaseModalOpen(true)}>
           Add Case
         </Button>
-        <Button variant="dark" onClick={() => setAddCaseModalOpen(false)}>
+        <Button variant="dark" onClick={() => "redirect"}>
           Delete Case
         </Button>
         <Button variant="dark" onClick={() => "redirect"}>

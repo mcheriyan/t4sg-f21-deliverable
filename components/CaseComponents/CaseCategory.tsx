@@ -54,11 +54,14 @@ const CaseCategory = (props: CaseCategoryProps) => {
       </Row>
       <Row>
         <Col>
-          {category
-            ? category.cases.map((c: CaseData, index: number) => {
+          {category 
+            ? (category.cases.map((c: CaseData, index: number) => {
                 return <CaseCard key={index} data={c} />;
-              })
-            : "Something went wrong"}
+              })) :
+            fetching ? (
+              "Loading..."
+            )
+            : "Something went wrong!"}
         </Col>
       </Row>
     </Container>
