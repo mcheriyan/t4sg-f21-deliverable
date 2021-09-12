@@ -3,6 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import { useQuery } from "urql";
 import CaseCard, { CaseData } from "./CaseCard";
 import Button from "react-bootstrap/Button";
+import DeleteCategoryModal from "./Modals/DeleteCategoryModal";
 
 type CaseCategoryProps = {
   category_id: number;
@@ -38,6 +39,11 @@ const CaseCategory = (props: CaseCategoryProps) => {
 
   const category: CaseCategoryData | null = data ? data?.category[0] : null;
 
+  <DeleteCategoryModal
+        onClose={() => setDeleteCategoryModalOpen(false)}
+        open={deleteCategoryModalOpen}
+      /> 
+    
   return (
     <Container
       style={{ width: "100%", borderStyle: "solid", padding: "0.75rem" }}
