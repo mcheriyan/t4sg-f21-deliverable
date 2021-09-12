@@ -45,9 +45,14 @@ type AddCaseModalProps = {
   in this variable 
 */
 const InsertCaseMutation = `
-query MyQuery {
-  __typename # Placeholder value
-}
+mutation addcaseMutation($description: String = "", $name: String = "", $status: String="", $category_id: String="") {
+  insert_cases_one(object: {description: $description, name: $name, status:$status, category_id:$category_id}) {
+    category_id
+    name
+    description
+    status
+  }
+} 
 `;
 // END TODO
 
@@ -126,9 +131,17 @@ const AddCaseModal: React.FC<AddCaseModalProps> = (props) => {
               {/*
                 FEATURE 2 TODO:
                 Use the data from the result of the query ManagementContainerQuery
+                  ==  var data?
                 to render a MenuItem with category id as the value, and the 
                 category name as the text.
               */}
+        
+            <MenuItem value={"To Do"}>To Do</MenuItem>
+            <MenuItem value={"In Progress"}>In Progress</MenuItem>
+            <MenuItem value={"Done"}>Done</MenuItem>
+              
+    
+
               {/* END TODO */}
             </Select>
           </FormControl>
