@@ -135,7 +135,7 @@ const AddCaseModal: React.FC<AddCaseModalProps> = (props) => {
                 to render a MenuItem with category id as the value, and the 
                 category name as the text.
               */}
-              
+              <MenuItem value={data.id}>{data.name}</MenuItem> 
               
 
 
