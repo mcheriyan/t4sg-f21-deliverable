@@ -137,7 +137,7 @@ const AddCaseModal: React.FC<AddCaseModalProps> = (props) => {
               */}
         
           
-            <MenuItem key={index} value={category.id}>{category.name}</MenuItem>
+           {/* <MenuItem key={index} value={category.id}>{category.name}</MenuItem>*/}
               
     
 
