@@ -8,6 +8,7 @@ import CaseCategory from "./CaseCategory";
 import AddCaseModal from "./Modals/AddCaseModal";
 import { useQuery } from "urql";
 import AddCategoryModal from "./Modals/AddCategoryModal";
+import DeleteCategoryModal from "./Modals/DeleteCategoryModal";
 
 /* 
   FEATURE 1 TODO:
@@ -91,6 +92,12 @@ const CaseManagementContainer: React.FC = (props) => {
         onClose={() => setAddCategoryModalOpen(false)}
         open={addCategoryModalOpen}
       />
+
+      <DeleteCategoryModal
+        onClose={() => setDeleteCategoryModalOpen(false)}
+        open={deleteCategoryModalOpen}
+      />
+
 
       <Container
         style={{
