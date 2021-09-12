@@ -64,7 +64,7 @@ const CaseManagementContainer: React.FC = (props) => {
                 return <CaseCategory key={name} category_id={id} />;
               })
 
-            : "Something went wrong"}
+            : "Something went wrong -- cat creation"}
           
 
         {/* END TODO */}
