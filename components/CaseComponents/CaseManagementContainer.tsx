@@ -72,6 +72,9 @@ const CaseManagementContainer: React.FC = (props) => {
                 <CaseCategory category_id={category.id}></CaseCategory>
               </Grid>
             })
+            ) :
+            fetching ? (
+              "Loading data..."
             )
             : "Something went wrong!"}
           
