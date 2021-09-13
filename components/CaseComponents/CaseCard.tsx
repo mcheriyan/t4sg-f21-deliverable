@@ -47,7 +47,11 @@ const CaseCard: React.FC<CaseCardProps> = (props) => {
             width="100%"
           >
             <CardTitle tag="h3">{caseData.name}</CardTitle>
-            <CloseIcon />
+            <Button onClick={() => {
+              caseData.name = ""
+              caseData.description = ""
+            }}> <CloseIcon />
+            </Button>
           </Box>
 
           <CardSubtitle tag="h6" className="mb-2 text-muted">
