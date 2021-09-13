@@ -41,9 +41,7 @@ mutation RemoveCategoryMutation($id: bigint!) {
   delete_category_by_pk(id: $id) {
     id
   }
-  delete_case_by_pk(id: $id) {
-    id
-  }
+
 }
 `;
 

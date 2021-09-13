@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Row,
@@ -8,8 +8,17 @@ import {
   CardSubtitle,
   CardText,
 } from "reactstrap";
+import {
+  Box,
+  Button,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@material-ui/core";
 import { useQuery } from "urql";
-import { Box } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 
 type CaseCardProps = {
@@ -25,6 +34,7 @@ export type CaseData = {
 
 const CaseCard: React.FC<CaseCardProps> = (props) => {
   const caseData = props.data;
+  const [status, setStatus] = useState<string | null>(null);
 
   return (
     <Container>
@@ -42,11 +52,30 @@ const CaseCard: React.FC<CaseCardProps> = (props) => {
 
           <CardSubtitle tag="h6" className="mb-2 text-muted">
             {caseData.status}
+            <Button onClick={() => 
+              <FormControl fullWidth>
+              <InputLabel id="status-select-label">Status</InputLabel>
+              <Select
+                labelId="status-select-label"
+                fullWidth
+                value={status}
+                onChange={(event: React.ChangeEvent<{ value: unknown }>) => {
+                  setStatus(event.target.value as string);
+                }}
+              >
+                <MenuItem value={"To Do"}>To Do</MenuItem>
+                <MenuItem value={"In Progress"}>In Progress</MenuItem>
+                <MenuItem value={"Done"}>Done</MenuItem>
+              </Select>
+            </FormControl>}> Edit Status </Button>
           </CardSubtitle>
           <CardText>{caseData.description}</CardText>
         </Card>
       </div>
     </Container>
   );
+
+  
+
 };
 export default CaseCard;

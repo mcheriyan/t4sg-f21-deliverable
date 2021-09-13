@@ -50,6 +50,7 @@ const CaseManagementContainer: React.FC = (props) => {
   return (
     <>
       <h5 className="title">Home Page</h5>
+      <h4> Case Tracker/Kanban Board </h4>
       <Grid container spacing={3}>
         {/*
           FEATURE 1 TODO:
@@ -123,6 +124,7 @@ const CaseManagementContainer: React.FC = (props) => {
           Edit Case
         </Button>
       </Container>
+      <h2>Made by M. Cheriyan | T4SG Deliverable.</h2>
     </>
   );
 };
