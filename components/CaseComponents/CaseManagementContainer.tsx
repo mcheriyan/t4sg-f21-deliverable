@@ -49,8 +49,8 @@ const CaseManagementContainer: React.FC = (props) => {
 
   return (
     <>
-      <h3 className="title">Home Page</h3>
-      <h5 className="title"> Case Tracker/Kanban Board! </h5>
+      <h3 className="title">Home Page | ACLU Task Management</h3>
+      <h5 className="title"> Case Tracker/Virtual Kanban Board </h5>
       <Grid container spacing={3}>
         {/*
           FEATURE 1 TODO:
