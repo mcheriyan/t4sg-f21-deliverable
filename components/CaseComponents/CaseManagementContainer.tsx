@@ -117,13 +117,14 @@ const CaseManagementContainer: React.FC = (props) => {
         <Button variant="dark" onClick={() => setAddCaseModalOpen(true)}>
           Add Case
         </Button>
-        <Button variant="dark" onClick={() => "redirect"}>
+       {/* <Button variant="dark" onClick={() => "redirect"}>
           Delete Case
         </Button>
         <Button variant="dark" onClick={() => "redirect"}>
           Edit Case
-        </Button>
+        </Button> */}
       </Container>
+      
       <h5 className="title">Made by A. Cheriyan | T4SG Deliverable.</h5>
     </>
   );
