@@ -49,7 +49,7 @@ const CaseCategory = (props: CaseCategoryProps) => {
       style={{ width: "100%", borderStyle: "solid", padding: "0.75rem" }}
     >
       <Button variant="dark" onClick={() => setDeleteCategoryModalOpen(true)}>
-          X
+          Save Changes
       </Button>
       <Row>
         <Col>
