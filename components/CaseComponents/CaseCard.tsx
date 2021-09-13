@@ -34,7 +34,7 @@ export type CaseData = {
 
 const CaseCard: React.FC<CaseCardProps> = (props) => {
   const caseData = props.data;
-  const [status, setStatus] = useState<string | null>(null);
+  const statuses = ["To Do", "In Progress", "Done"]
 
   return (
     <Container>
@@ -53,21 +53,12 @@ const CaseCard: React.FC<CaseCardProps> = (props) => {
           <CardSubtitle tag="h6" className="mb-2 text-muted">
             {caseData.status}
             <Button onClick={() => 
-              <FormControl fullWidth>
-              <InputLabel id="status-select-label">Status</InputLabel>
-              <Select
-                labelId="status-select-label"
-                fullWidth
-                value={status}
-                onChange={(event: React.ChangeEvent<{ value: unknown }>) => {
-                  setStatus(event.target.value as string);
-                }}
-              >
-                <MenuItem value={"To Do"}>To Do</MenuItem>
-                <MenuItem value={"In Progress"}>In Progress</MenuItem>
-                <MenuItem value={"Done"}>Done</MenuItem>
-              </Select>
-            </FormControl>}> Edit Status </Button>
+             {caseData.status == statuses[0] ? (caseData.status = statuses[1]
+              ) : caseData.status == statuses[1] ? (caseData.status = statuses[2]
+              ) : caseData.status = statuses [0]
+             }
+
+            }> Toggle Status </Button>
           </CardSubtitle>
           <CardText>{caseData.description}</CardText>
         </Card>
