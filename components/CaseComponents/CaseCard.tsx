@@ -53,12 +53,12 @@ const CaseCard: React.FC<CaseCardProps> = (props) => {
           <CardSubtitle tag="h6" className="mb-2 text-muted">
             {caseData.status}
             <Button onClick={() => 
-             {caseData.status == statuses[0] ? (caseData.status = statuses[1]
-              ) : caseData.status == statuses[1] ? (caseData.status = statuses[2]
-              ) : caseData.status = statuses [0]
+             {caseData.status == "To Do" ? (caseData.status = "In Progress"
+              ) : caseData.status == "In Progress" ? (caseData.status = "Done"
+              ) : caseData.status = "To Do"
              }
 
-            }> Toggle Status </Button>
+            }> Change Status </Button>
           </CardSubtitle>
           <CardText>{caseData.description}</CardText>
         </Card>
